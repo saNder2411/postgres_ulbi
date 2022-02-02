@@ -1,4 +1,4 @@
-export type Post = { id: number; title: string; content: string; userId: number }
+export type Post = { id: string; title: string; content: string; userId: number }
 
 export type CreatePost = Omit<Post, 'id'>
 

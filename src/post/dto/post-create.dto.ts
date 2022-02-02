@@ -1,4 +1,4 @@
-import { IsString } from 'class-validator'
+import { IsString, IsNumber } from 'class-validator'
 
 export class PostCreateDTO {
 	@IsString({ message: 'Name not specified!' })
@@ -7,10 +7,10 @@ export class PostCreateDTO {
 	@IsString({ message: 'Surname not specified!' })
 	public content: string
 
-	@IsString({ message: 'UserId not specified!' })
-	public userId: string
+	@IsNumber({}, { message: 'UserId not specified!' })
+	public userId: number
 
-	constructor(title: string, content: string, userId: string) {
+	constructor(title: string, content: string, userId: number) {
 		this.title = title
 		this.content = content
 		this.userId = userId

@@ -47,7 +47,7 @@ export class PostController extends BaseController implements IPostController {
 	}
 
 	public async getPostsByUserId(req: Request, res: Response, next: NextFunction): Promise<void> {
-		const userId = req.params.id
+		const userId = req.query.id as string
 
 		const posts = await this.postService.getPostsByUserId(+userId)
 
